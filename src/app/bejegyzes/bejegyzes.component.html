@@ -1,0 +1,25 @@
+<div class="container">
+  <label for="form">Mit tettél ma a Földért?</label>
+  <form name="form" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group">
+      <div class="row">
+        <div class="col-md-5">
+          <select class="form-control" name="osztalyInput" [(ngModel)]="osztaly">
+            <option selected disabled hidden>Válassz osztályt!</option>
+            <option *ngFor="let o of osztalyok">{{ o }}</option>
+          </select>
+        </div>
+        <div class="col-md-5">
+          <select class="form-control" name="tevekenysegInput" [(ngModel)]="tevekenyseg">
+            <option selected disabled hidden>Válassz tevékenységet!</option>
+            <option *ngFor="let t of tevekenysegek">{{ t }}</option>
+          </select>
+        </div>
+        <div class="col-md-2">
+          <button class="btn btn-primary" type="submit">Küld</button>
+        </div>
+      </div>
+    </div>
+  </form>
+  <hr />
+</div>
